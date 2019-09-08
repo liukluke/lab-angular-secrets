@@ -1,13 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { SessionService } from "./session.service";
+
+import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms'
+
+import { SessionService } from './services/session.service';
 
 import { AppComponent } from './app.component';
-import { AuthLoginComponent } from './auth-login/auth-login.component';
-import { AuthSignupComponent } from './auth-signup/auth-signup.component';
-import { MyPrivatePageComponent } from './my-private-page/my-private-page.component';
+import { AuthLoginComponent } from './components/auth-login/auth-login.component';
+import { AuthSignupComponent } from './components/auth-signup/auth-signup.component';
+import { MyPrivatePageComponent } from './components/my-private-page/my-private-page.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +21,9 @@ import { MyPrivatePageComponent } from './my-private-page/my-private-page.compon
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [SessionService],
   bootstrap: [AppComponent]
