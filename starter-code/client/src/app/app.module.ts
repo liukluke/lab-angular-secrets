@@ -11,13 +11,15 @@ import { AppComponent } from './app.component';
 import { AuthLoginComponent } from './components/auth-login/auth-login.component';
 import { AuthSignupComponent } from './components/auth-signup/auth-signup.component';
 import { MyPrivatePageComponent } from './components/my-private-page/my-private-page.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthLoginComponent,
     AuthSignupComponent,
-    MyPrivatePageComponent
+    MyPrivatePageComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

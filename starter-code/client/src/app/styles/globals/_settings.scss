@@ -1,0 +1,31 @@
+//FONTS
+@import url("https://fonts.googleapis.com/css?family=Manjari:100,400,700&display=swap");
+
+//COLORS
+$colors: (
+  text: darken(#7F8688, 30%),
+  submit: #929D9E,
+  buttons: #F3E367
+);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+//VARIABLES
+$family-font: "Manjari", sans-serif;
+
+//GENERAL
+* > {
+  box-sizing: border-box;
+}
+
+.main-container {
+  font-family: $family-font;
+  text-transform: capitalize;
+  color: color(text);
+}
+
+a {
+  text-decoration: none;
+}
