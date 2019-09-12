@@ -44,4 +44,12 @@ export class SessionService {
       );
   }
 
+  getPrivateData(): Observable<any> {
+    return this.httpClient.get(`/private`)
+      .pipe(
+        map((data: any) => data),
+        catchError(this.handleError)
+      );
+  }
+
 }

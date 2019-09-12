@@ -3,9 +3,9 @@
 
 //COLORS
 $colors: (
-  text: darken(#7F8688, 30%),
-  submit: #929D9E,
-  buttons: #F3E367
+  text: darken(#7f8688, 30%),
+  submit: #929d9e,
+  buttons: #f3e367
 );
 
 @function color($color-name) {
@@ -27,5 +27,15 @@ $family-font: "Manjari", sans-serif;
 }
 
 a {
+  color: color(text);
   text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  color: color(text);
+  text-transform: capitalize;
+  &:focus {
+    outline: 0;
+  }
 }
