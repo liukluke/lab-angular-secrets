@@ -1,9 +1,14 @@
 <header>
     <h1>secrets</h1>
     <nav>
-        <ul>
-            <li><button (click)="selectView('login')">login</button></li>
-            <li><button (click)="selectView('signup')">signup</button></li>
+        <ul *ngIf="isUserLoggedIn; else elseBlock">
+            <li (click)="logout()" style="cursor: pointer;">logout</li>
         </ul>
+        <ng-template #elseBlock>
+            <ul>
+                <li><a [routerLink]="['login']">login</a></li>
+                <li><a [routerLink]="['signup']">signup</a></li>
+            </ul>
+        </ng-template>
     </nav>
 </header>

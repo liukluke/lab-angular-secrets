@@ -1,4 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { SessionService } from './../../services/session.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-auth-login',
@@ -6,16 +8,23 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./../../styles/styles.scss']
 })
 export class AuthLoginComponent implements OnInit {
+  error: string;
   newLoginInput: Object = {
     username: '',
     password: ''
   };
-  constructor() { }
+  user: Object;
+  constructor(private session: SessionService) { }
   ngOnInit() { }
-
-  @Output() newLogin: EventEmitter<any> = new EventEmitter();
-  submitForm(login: Object) {
-    this.newLogin.emit(login);
-    this.newLoginInput = {};
+  login(): void {
+    this.session.login(this.newLoginInput)
+      .subscribe(
+        (user: HttpClient) => {
+          this.user = user;
+          this.session.isUserLoggedIn.next(true);
+          this.newLoginInput = {}
+        },
+        (err: any) => this.error = err
+      );
   }
 }

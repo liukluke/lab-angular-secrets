@@ -1,4 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SessionService } from './../../services/session.service';
 
 @Component({
   selector: 'app-header',
@@ -6,13 +7,17 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./../../styles/styles.scss']
 })
 export class HeaderComponent implements OnInit {
-  constructor() { }
-
-  ngOnInit() { }
-
-  @Output() views: EventEmitter<any> = new EventEmitter();
-  selectView(viewAttr: string) {
-    this.views.emit(viewAttr);
+  isUserLoggedIn: boolean;
+  constructor(private session: SessionService) {
+    this.session.isUserLoggedIn.subscribe(value => {
+      this.isUserLoggedIn = value;
+    });
   }
-
+  ngOnInit(): void { }
+  logout(): void {
+    this.session.logout()
+      .subscribe(() => {
+        this.isUserLoggedIn = !this.isUserLoggedIn;
+      })
+  }
 }

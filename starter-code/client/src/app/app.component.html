@@ -1,12 +1,11 @@
 <div class="main-container">
-  <app-header (views)="selectView($event)" ></app-header>
+  <app-header (views)="selectView($event)"  ></app-header>
+  <!-- [user]="user" -->
   <div class="container">
-    <div>
+    <!-- <div>
       <app-auth-signup *ngIf="view === 'signup'" (newSignup)="signupForm($event)"></app-auth-signup>
       <app-auth-login *ngIf="view === 'login'" (newLogin)="submitForm($event)"></app-auth-login>
-    </div>
-    <!-- <router-outlet (newLogin)="submitForm($event)">
-        <app-auth-signup (newSignup)="signupForm($event)"></app-auth-signup>
-    </router-outlet> -->
+    </div> -->
+    <router-outlet></router-outlet>
   </div>
 </div>

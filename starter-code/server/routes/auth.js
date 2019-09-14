@@ -50,8 +50,8 @@ router.post("/signup", (req, res, next) => {
     console.log(newUser);
 
     newUser.save()
-      .then(() => {
-        res.status(200).json(req.user);
+      .then((user) => {
+        res.status(200).json(user);
       })
       .catch(err => {
         res.status(400).json({ message: "Something went wrong" });
