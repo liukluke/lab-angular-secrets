@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { SessionService } from './../../services/session.service';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth-signup',
@@ -16,7 +17,7 @@ export class AuthSignupComponent implements OnInit {
     password: ''
   };
   user: any;
-  constructor(private session: SessionService) { }
+  constructor(private session: SessionService,private router: Router) { }
   ngOnInit(): void { }
   signup(): void {
     this.session.signup(this.newSignupInput)
@@ -34,6 +35,7 @@ export class AuthSignupComponent implements OnInit {
         (user: HttpClient) => {
           this.user = user;
           this.session.isUserLoggedIn.next(true);
+          this.router.navigate(['private']);
         },
         (err: any) => this.error = err
       );

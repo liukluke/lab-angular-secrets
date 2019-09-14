@@ -46,13 +46,12 @@ export class SessionService {
       );
   }
 
-
-  // getPrivateData(): Observable<any> {
-  //   return this.httpClient.get(`${environment.BASE_URL}/private`)
-  //     .pipe(
-  //       map((data: any) => data),
-  //       catchError(this.handleError)
-  //     );
-  // }
+  getPrivateData(): Observable<any> {
+    return this.httpClient.get(`${environment.BASE_URL}/private`, this.options)
+      .pipe(
+        map((data: any) => data),
+        catchError(this.handleError)
+      );
+  }
 
 }

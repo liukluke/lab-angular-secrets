@@ -65,12 +65,12 @@ router.post("/logout", (req, res) => {
 });
 
 router.get("/loggedin", (req, res) => {
-  if (req.isAuthenticated()) { return res.status(200).json(req.user); }
+  if (req.isAuthenticated()) { res.status(200).json(req.user); return; }
   return res.status(403).json({ message: "Unauthorized" });
 });
 
 router.get("/private", (req, res) => {
-  if (req.isAuthenticated()) { return res.json({ message: req.user.secret }); }
+  if (req.isAuthenticated()) { res.json({ message: req.user.secret }); return; }
   return res.status(403).json({ message: "Unauthorized" });
 });
 
