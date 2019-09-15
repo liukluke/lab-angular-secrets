@@ -1,19 +1,10 @@
+<h2>login</h2>
 <form ngNativeValidate>
-    <p> Username
-        <input type="text" name="username" [(ngModel)]="newLoginInput.username" required />
-    </p>
-    <p> Password
-        <input type="password" name="password" [(ngModel)]="newLoginInput.password" required />
-    </p>
-    <button (click)="login()">login</button>
+    <ul>
+        <li><label for="username">username</label><br />
+            <input type="text" name="username" [(ngModel)]="newLoginInput.username" required /></li>
+        <li><label for="password">password</label><br />
+            <input type="password" name="password" [(ngModel)]="newLoginInput.password" required /></li>
+        <li><button (click)="login()">login</button></li>
+    </ul>
 </form>
-
-<!-- <form (ngSubmit)="submitForm(login)" #login="ngForm" ngNativeValidate>
-    <p> Username
-        <input type="text" name="username" [(ngModel)]="newLoginInput.username" required />
-    </p>
-    <p> Password
-        <input type="password" name="password" [(ngModel)]="newLoginInput.password" required />
-    </p>
-    <button type="submit">login</button>
-</form> -->

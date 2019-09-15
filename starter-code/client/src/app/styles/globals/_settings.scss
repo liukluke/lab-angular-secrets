@@ -1,11 +1,12 @@
 //FONTS
-@import url("https://fonts.googleapis.com/css?family=Manjari:100,400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=BenchNine:300,400,700&display=swap");
 
 //COLORS
 $colors: (
   text: darken(#7f8688, 30%),
   submit: #929d9e,
-  buttons: #f3e367
+  buttons: #f3e367,
+  buttonsHover: darken(#f3e367, 4%)
 );
 
 @function color($color-name) {
@@ -13,7 +14,10 @@ $colors: (
 }
 
 //VARIABLES
-$family-font: "Manjari", sans-serif;
+$family-font: "BenchNine", sans-serif;
+$buttonsBorderRadius: 15px;
+$letterSpacing: 0.1rem;
+$hoverTransition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
 //GENERAL
 * > {
@@ -34,7 +38,13 @@ a {
 button {
   cursor: pointer;
   color: color(text);
-  text-transform: capitalize;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: $family-font;
+  letter-spacing: $letterSpacing;
+  background: none;
+  border: 0;
+  padding: 0;
   &:focus {
     outline: 0;
   }

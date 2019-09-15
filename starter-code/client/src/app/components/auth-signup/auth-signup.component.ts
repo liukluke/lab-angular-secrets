@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SessionService } from './../../services/session.service';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';

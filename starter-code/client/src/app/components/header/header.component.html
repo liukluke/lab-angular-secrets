@@ -2,7 +2,7 @@
     <h1>secrets</h1>
     <nav>
         <ul *ngIf="isUserLoggedIn; else elseBlock">
-            <li (click)="logout()" style="cursor: pointer;">logout</li>
+            <li id="btn-logout"><button (click)="logout()">logout</button></li>
         </ul>
         <ng-template #elseBlock>
             <ul>

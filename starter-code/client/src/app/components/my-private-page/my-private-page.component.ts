@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-my-private-page',
   templateUrl: './my-private-page.component.html',
-  styleUrls: ['./my-private-page.component.scss']
+  styleUrls: ['./../../styles/styles.scss']
 })
 export class MyPrivatePageComponent implements OnInit {
   user: any;

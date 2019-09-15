@@ -1,32 +1,14 @@
+<h2>signup</h2>
 <form ngNativeValidate>
-    <p> Username
-        <input type="text" name="username" [(ngModel)]="newSignupInput.username" required />
-    </p>
-    <p> Name
-        <input type="text" name="name" [(ngModel)]="newSignupInput.name" required />
-    </p>
-    <p> Your Secret
-        <input type="text" name="secret" [(ngModel)]="newSignupInput.secret" required />
-    </p>
-    <p> Password
-        <input type="password" name="password" [(ngModel)]="newSignupInput.password" required />
-    </p>
-    <button (click)="signup()"> create </button>
+    <ul>
+        <li><label for="username">username</label><br />
+            <input type="text" name="username" [(ngModel)]="newSignupInput.username" required /></li>
+        <li><label for="name">name</label><br />
+            <input type="text" name="name" [(ngModel)]="newSignupInput.name" required /></li>
+        <li><label for="secret">your secret</label><br />
+            <input type="text" name="secret" [(ngModel)]="newSignupInput.secret" required /></li>
+        <li><label for="password">password</label><br />
+            <input type="password" name="password" [(ngModel)]="newSignupInput.password" required /></li>
+        <li><button (click)="signup()">create</button></li>
+    </ul>
 </form>
-
-<!-- 
-<form (ngSubmit)="signupForm(signup)" #signup="ngForm" ngNativeValidate>
-    <p> Username
-        <input type="text" name="username" [(ngModel)]="newSignupInput.username" required />
-    </p>
-    <p> Name
-        <input type="text" name="name" [(ngModel)]="newSignupInput.name" required />
-    </p>
-    <p> Your Secret
-        <input type="text" name="secret" [(ngModel)]="newSignupInput.secret" required />
-    </p>
-    <p> Password
-        <input type="password" name="password" [(ngModel)]="newSignupInput.password" required />
-    </p>
-    <button type="submit"> create </button>
-</form> -->
