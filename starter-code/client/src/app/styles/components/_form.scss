@@ -1,32 +1,30 @@
-h2 {
-  text-transform: uppercase;
-  letter-spacing: $letterSpacing;
-}
-form {
-  margin: 17px 0;
-  label {
-    margin-bottom: 5px;
-  }
-  input {
-    box-sizing: border-box;
-    width: 100%;
-    margin: 5px 0 17px 0;
-    padding: 7px 10px;
-    font-family: $family-font;
-    border: 1px solid color(submit);
-    &:focus {
-      outline: 0;
+.form-container {
+  form {
+    margin: 17px 0;
+    label {
+      margin-bottom: 5px;
     }
-  }
-  button {
-    background-color: color(text);
-    width: 100%;
-    padding: 7px 10px;
-    color: #ffffff;
-    transition: $hoverTransition;
-    &:hover{
+    input {
+      box-sizing: border-box;
+      width: 100%;
+      margin: 5px 0 17px 0;
+      padding: 7px 10px;
+      font-family: $family-font;
+      border: 1px solid color(submit);
+      &:focus {
+        outline: 0;
+      }
+    }
+    button {
+      background-color: color(text);
+      width: 100%;
+      padding: 7px 10px;
+      color: #ffffff;
+      transition: $hoverTransition;
+      &:hover {
         background-color: color(buttons);
         color: color(text);
+      }
     }
   }
 }

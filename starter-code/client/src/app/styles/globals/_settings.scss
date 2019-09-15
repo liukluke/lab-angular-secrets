@@ -30,6 +30,11 @@ $hoverTransition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   color: color(text);
 }
 
+h2 {
+  text-transform: uppercase;
+  letter-spacing: $letterSpacing;
+}
+
 a {
   color: color(text);
   text-decoration: none;
